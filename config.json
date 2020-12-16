@@ -1,0 +1,26 @@
+{
+    "name":  "呼噜猫小车",
+    "description": "可编程的智能小车",
+    "author": "HuangRuoLei",
+    "email": "1694001042@qq.com",
+    "license": "MIT",
+    "isBoard": false,
+    "id": "HuLuMaoCar",
+    "platform": [
+      "win",
+      "mac",
+      "web"
+    ],
+    "asset": {
+      "arduinoC": {
+        "dir": "arduinoC/",
+        "version": "0.0.1",
+        "board": [
+          "microbit"
+        ],
+        "main": "main.ts",
+        "files": [
+        ]
+      }
+    }
+  }
