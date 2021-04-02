@@ -566,7 +566,7 @@ namespace HuLuMaoexpanding {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Gear(speed:number):void {
         basic.pause(10);
-        HuLuMaoCar.IICWrite(78,speed);
+        HuLuMaoexpanding.IICWrite(78,speed);
      }
 
 }
