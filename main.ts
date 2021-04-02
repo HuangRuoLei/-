@@ -427,12 +427,12 @@ namespace HuLuMaoexpanding {
         else {
             temp=false;
         } */
-        if(pins.digitalReadPin(DigitalPin.P3)){
+        if(pins.analogReadPin(AnalogPin.P3)>800){
             
-            temp=false;
+            temp=true;
         }
         else{
-            temp=true;
+            temp=false;
         }
         return temp;
     }
@@ -457,10 +457,10 @@ namespace HuLuMaoexpanding {
             temp=false;
         } */
         if(pins.digitalReadPin(DigitalPin.P5)){
-            temp=true;
+            temp=false;
         }
         else{
-            temp=false;
+            temp=true;
         }
      //   temp1=pins.i2cReadNumber(73, NumberFormat.UInt8LE);
      //   if(temp1==1)
@@ -483,10 +483,10 @@ namespace HuLuMaoexpanding {
       //  let temp1;
         basic.pause(10);
         if(pins.digitalReadPin(DigitalPin.P4)){
-            temp=true;
+            temp=false;
         }
         else{
-            temp=false;
+            temp=true;
         }
         /*
         if (pins.digitalReadPin(DigitalPin.P3) == 0) {
@@ -522,8 +522,8 @@ namespace HuLuMaoexpanding {
             temp=true;
         }*/
         let data;
-        data=pins.analogReadPin(AnalogPin.P6);
-        if(data>150){
+        data=pins.digitalReadPin(DigitalPin.P10);
+        if(data==1){
             temp = true;
         }
         else{
@@ -550,10 +550,24 @@ namespace HuLuMaoexpanding {
     export function Vioce_data():number {
         let length;
         basic.pause(10);
-        length = pins.analogReadPin(AnalogPin.P6);
+        length = pins.analogReadPin(AnalogPin.P10);
         return length;
     }
- 
+    
+    /**
+     * 选择以打开扩展板舵机功能,角度可调
+     * @param index
+    */
+    //% blockId=HuLuMaoexpanding_Car_Gear block="舵机转动 %speed °"
+    //% weight=93
+    //% blockGap=10
+     //% speed.min=0 speed.max=180
+    //% color="#ff0000"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_Gear(speed:number):void {
+        basic.pause(10);
+        HuLuMaoCar.IICWrite(78,speed);
+     }
 
 }
 //% color="#ff0000" weight=48 icon="\uf1b0" block="呼噜猫扩展板显示类"
