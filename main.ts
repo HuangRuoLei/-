@@ -391,8 +391,8 @@ namespace HuLuMaoexpanding {
         let temp1;
         basic.pause(10);
         switch(index1){
-            case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P7)==1)temp1=1;else temp1=0;break;    /*检测到黑线返回1*/    
-            case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P7)==0)temp1=1;else temp1=0;break;    /*检测到白线返回0*/   
+            case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P16)==1)temp1=1;else temp1=0;break;    /*检测到黑线返回1*/    
+            case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P16)==0)temp1=1;else temp1=0;break;    /*检测到白线返回0*/   
         }
     
         if(temp1==1)
@@ -427,7 +427,7 @@ namespace HuLuMaoexpanding {
         else {
             temp=false;
         } */
-        if(pins.analogReadPin(AnalogPin.P3)>800){
+        if(pins.digitalReadPin(DigitalPin.P13)){
             
             temp=true;
         }
@@ -456,7 +456,7 @@ namespace HuLuMaoexpanding {
         else {
             temp=false;
         } */
-        if(pins.digitalReadPin(DigitalPin.P5)){
+        if(pins.digitalReadPin(DigitalPin.P15)){
             temp=false;
         }
         else{
@@ -482,7 +482,7 @@ namespace HuLuMaoexpanding {
         let temp: boolean = false;
       //  let temp1;
         basic.pause(10);
-        if(pins.digitalReadPin(DigitalPin.P4)){
+        if(pins.digitalReadPin(DigitalPin.P14)){
             temp=false;
         }
         else{
@@ -566,7 +566,7 @@ namespace HuLuMaoexpanding {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Gear(speed:number):void {
         basic.pause(10);
-        HuLuMaoexpanding.IICWrite(78,speed);
+        HuLuMaoexpanding.IICWrite(78,speed);    
      }
 
 }
