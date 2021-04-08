@@ -329,6 +329,8 @@ namespace HuLuMaoexpanding {
         basic.pause(10);
   //      pins.i2cReadNumber(65, NumberFormat.UInt8LE);
   //      basic.pause(100);
+         IICWrite(65, 2);
+         basic.pause(100);
         length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
         return length;
     }
