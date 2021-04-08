@@ -565,8 +565,9 @@ namespace HuLuMaoexpanding {
     //% color="#ff0000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_Gear(speed:number):void {
-        basic.pause(10);
-        HuLuMaoexpanding.IICWrite(78,speed);    
+      //  basic.pause(10);
+      //  HuLuMaoexpanding.IICWrite(78,speed); 
+         pins.servoWritePin(AnalogPin.P12, speed);   
      }
 
 }
