@@ -330,7 +330,7 @@ namespace HuLuMaoexpanding {
   //      pins.i2cReadNumber(65, NumberFormat.UInt8LE);
   //      basic.pause(100);
          IICWrite(65, 2);
-         basic.pause(100);
+         basic.pause(10);
         length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
         return length;
     }
@@ -929,7 +929,7 @@ namespace HuLuMaoexpandingDisplay{
 namespace HuLuMaoexpanding_Key {
     export enum key_number{
         //% blockId="_1" block="0"
-        _1=1,
+        _1=0,
         //% blockId="_2" block="1"
         _2,
         //% blockId="_3" block="2"
