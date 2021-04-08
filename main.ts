@@ -926,21 +926,21 @@ namespace HuLuMaoexpandingDisplay{
 //% color="#ff0000" weight=47 icon="\uf1b0" block="呼噜猫扩展板按键类"
 namespace HuLuMaoexpanding_Key {
     export enum key_number{
-        //% blockId="_1" block="1"
+        //% blockId="_1" block="0"
         _1=1,
-        //% blockId="_2" block="2"
+        //% blockId="_2" block="1"
         _2,
-        //% blockId="_3" block="3"
+        //% blockId="_3" block="2"
         _3,
-        //% blockId="_4" block="4"
+        //% blockId="_4" block="3"
         _4,
-        //% blockId="_5" block="5"
+        //% blockId="_5" block="4"
         _5,
-        //% blockId="_6" block="6"
+        //% blockId="_6" block="5"
         _6,
-        //% blockId="_7" block="7"
+        //% blockId="_7" block="6"
         _7,
-        //% blockId="_8" block="8"
+        //% blockId="_8" block="7"
         _8
     }
      /**
