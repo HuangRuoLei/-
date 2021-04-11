@@ -1021,6 +1021,7 @@ namespace HuLuMaoexpanding_Key {
     //% color="#ff0000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Key1(index:key_number,index1:key_number): boolean {
+        basic.pause(10);
         let temp: boolean = false;
         let num;
         let key_1,key_2;
