@@ -927,7 +927,7 @@ namespace HuLuMaoexpandingDisplay{
 namespace HuLuMaoexpanding_Key {
     export enum key_number{
         //% blockId="_1" block="0"
-        _1=0,
+        _1=1,
         //% blockId="_2" block="1"
         _2,
         //% blockId="_3" block="2"
@@ -942,6 +942,12 @@ namespace HuLuMaoexpanding_Key {
         _7,
         //% blockId="_8" block="7"
         _8
+    }
+    export enum support{
+        //% blockId="support" block="支持"
+        support=1,
+        //% blockId="nosupport" block="不支持"
+        nosupport
     }
     export function Key_Press(index:key_number){
         let temp: boolean = false;
@@ -960,12 +966,12 @@ namespace HuLuMaoexpanding_Key {
      * 判断指定按键是否按下
      * @param index
     */
-    //% blockId=HuLuMaoexpanding_Key_Key block="当按键|%index被按下"
+    //% blockId=HuLuMaoexpanding_Key_Key block="当按键|%index被按下,|%support连按"
     //% weight=100
     //% blockGap=10
     //% color="#ff0000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Key(index:key_number): boolean {
+    export function Key(index:key_number,index1:support): boolean {
         
         let temp: boolean = false;
       /*  let num;
@@ -983,7 +989,10 @@ namespace HuLuMaoexpanding_Key {
         }
         return temp;*/
         temp=Key_Press(index);
-        while(Key_Press(index)==true);
+        if(index1==support.nosupport){
+            while(Key_Press(index)==true);
+        }
+         
         return temp;
     }
     /**
