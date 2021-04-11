@@ -1005,9 +1005,12 @@ namespace HuLuMaoexpanding_Key {
     //% color="#ff0000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Key_get(): number {
-        let num;
+        let num=1;
         basic.pause(10);
-        num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
+        while(num!=0){
+         num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
+        }
+        num=num-1;
         return num;
     }
     /**
