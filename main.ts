@@ -943,6 +943,19 @@ namespace HuLuMaoexpanding_Key {
         //% blockId="_8" block="7"
         _8
     }
+    export function Key_Press(index:key_number){
+        let temp: boolean = false;
+        let num;
+        basic.pause(10);
+        num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
+        if(num==index){
+            temp=true;
+        }
+        else{
+            temp=false;
+        }
+        return temp;
+    }
      /**
      * 判断指定按键是否按下
      * @param index
@@ -953,8 +966,9 @@ namespace HuLuMaoexpanding_Key {
     //% color="#ff0000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Key(index:key_number): boolean {
+        
         let temp: boolean = false;
-        let num;
+      /*  let num;
         basic.pause(10);
         num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
         if(num==index){
@@ -967,6 +981,9 @@ namespace HuLuMaoexpanding_Key {
           //  basic.pause(10);
             num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
         }
+        return temp;*/
+        temp=Key_Press(index);
+        while(Key_Press(index)==true);
         return temp;
     }
     /**
