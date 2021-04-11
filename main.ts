@@ -963,6 +963,10 @@ namespace HuLuMaoexpanding_Key {
         else{
             temp=false;
         }
+        while(num!=10){
+            basic.pause(10);
+            num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
+        }
         return temp;
     }
     /**
