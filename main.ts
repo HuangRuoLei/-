@@ -1007,9 +1007,7 @@ namespace HuLuMaoexpanding_Key {
     export function Key_get(): number {
         let num;
         basic.pause(10);
-        while(num==0){
-         num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
-        }
+        num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
         num=num-1;
         return num;
     }
