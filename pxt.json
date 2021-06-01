@@ -1,7 +1,7 @@
 {
-    "name": "HuLuMao-MicroBitCar",
+    "name": "HuLuMao-board-Summer-Vacation",
     "version": "1.0.0",
-    "description": "This is HuLuMao Micro_BitCar V1.0.0",
+    "description": "This is HuLuMao board-Summer-Vacation V1.0.0",
     "license": "MIT",
     "dependencies": {
         "core": "*",
