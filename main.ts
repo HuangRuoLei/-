@@ -78,10 +78,21 @@ namespace HuLuMaoexpanding {
             pins.digitalWritePin(DigitalPin.P16, 0)
         }
         switch (index) {
-            case key_number._0 : if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
-            case key_number._1 : if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
-            case key_number._2 : if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
-            case key_number._3 : if (pins.digitalReadPin(DigitalPin.P13) == 1) { temp = true } break;
+            case key_number._0: if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
+            case key_number._4: if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
+            case key_number._8: if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
+
+            case key_number._1: if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
+            case key_number._5: if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
+            case key_number._9: if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
+            
+            case key_number._2: if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
+            case key_number._6: if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
+            case key_number._F1: if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
+            
+            case key_number._3: if (pins.digitalReadPin(DigitalPin.P13) == 1) { temp = true } break;
+            case key_number._7: if (pins.digitalReadPin(DigitalPin.P13) == 1) { temp = true } break;
+            case key_number._F2 : if (pins.digitalReadPin(DigitalPin.P13) == 1) { temp = true } break;
             // case key_number._0 | key_number._4 | key_number._8: if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
             // case key_number._1 | key_number._5 | key_number._9: if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
             // case key_number._2 | key_number._6 | key_number._F1: if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
