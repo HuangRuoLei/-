@@ -27,94 +27,78 @@ namespace HuLuMaoexpanding {
         //% blockId="_F2" block="F2"
         _F2,
     }
-    /**
-     * 
-     * @param index
-    */
-    //% blockId=HuLuMaoexpanding_Init block="初始化扩展板按键"
-    //% weight=100
-    //% blockGap=10
-    //% color="#ff0000"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Init(): void {
-        pins.setPull(DigitalPin.P8, PinPullMode.PullDown)
-        pins.setPull(DigitalPin.P9, PinPullMode.PullDown)
-        pins.setPull(DigitalPin.P12, PinPullMode.PullDown)
-        pins.setPull(DigitalPin.P13, PinPullMode.PullDown)
-        pins.digitalWritePin(DigitalPin.P8, 0)
-        pins.digitalWritePin(DigitalPin.P9, 0)
-        pins.digitalWritePin(DigitalPin.P12, 0)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.setPull(DigitalPin.P14, PinPullMode.PullUp)
-        pins.setPull(DigitalPin.P15, PinPullMode.PullUp)
-        pins.setPull(DigitalPin.P16, PinPullMode.PullUp)
-        pins.digitalWritePin(DigitalPin.P14, 0)
-        pins.digitalWritePin(DigitalPin.P15, 0)
-        pins.digitalWritePin(DigitalPin.P16, 0)
-    }
+    // /**
+    //  * 
+    //  * @param index
+    // */
+    // //% blockId=HuLuMaoexpanding_Init block="初始化扩展板按键"
+    // //% weight=100
+    // //% blockGap=10
+    // //% color="#ff0000"
+    // //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    // export function Init(): void {
+
+    // }
      /**
      * 判断指定按键是否按下
      * @param index
     */
-    //% blockId=HuLuMaoexpanding_Key_Key block="当按键|%index被按下,|%support连按"
+    //% blockId=HuLuMaoexpanding_Key_Key block="当按键|%index被按下"
     //% weight=99
     //% blockGap=10
     //% color="#ff0000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Key(index:key_number): boolean {
-        
-        let temp: boolean = false;
-        if (index <= 3) {
-            pins.digitalWritePin(DigitalPin.P14, 0)
-            pins.digitalWritePin(DigitalPin.P15, 0)
-            pins.digitalWritePin(DigitalPin.P16, 1)
-        } else if ((4 <= index) && (index <= 7)) {
-            pins.digitalWritePin(DigitalPin.P14, 0)
-            pins.digitalWritePin(DigitalPin.P15, 1)
-            pins.digitalWritePin(DigitalPin.P16, 0)
-        } else if (8 <= index) {
-            pins.digitalWritePin(DigitalPin.P14, 1)
-            pins.digitalWritePin(DigitalPin.P15, 0)
-            pins.digitalWritePin(DigitalPin.P16, 0)
-        }
-        switch (index) {
-            case key_number._0: if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
-            case key_number._4: if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
-            case key_number._8: if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
-
-            case key_number._1: if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
-            case key_number._5: if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
-            case key_number._9: if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
-            
-            case key_number._2: if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
-            case key_number._6: if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
-            case key_number._F1: if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
-            
-            case key_number._3: if (pins.digitalReadPin(DigitalPin.P13) == 1) { temp = true } break;
-            case key_number._7: if (pins.digitalReadPin(DigitalPin.P13) == 1) { temp = true } break;
-            case key_number._F2 : if (pins.digitalReadPin(DigitalPin.P13) == 1) { temp = true } break;
-            // case key_number._0 | key_number._4 | key_number._8: if (pins.digitalReadPin(DigitalPin.P8) == 1) { temp = true } break;
-            // case key_number._1 | key_number._5 | key_number._9: if (pins.digitalReadPin(DigitalPin.P9) == 1) { temp = true } break;
-            // case key_number._2 | key_number._6 | key_number._F1: if (pins.digitalReadPin(DigitalPin.P12) == 1) { temp = true } break;
-            // case key_number._3 | key_number._7 | key_number._F2: if (pins.digitalReadPin(DigitalPin.P13) == 1) { temp = true } break;
-        }
-        return temp;
+        let data;
+       // let temp: boolean = false;
+        data=basic.showNumber(pins.analogReadPin(AnalogPin.P0));
+        if(data>1010) data=-1;
+        else if (data<10) data=0;
+        else if ((30<data)&&(data<120)) data=1;
+        else if ((140<data)&&(data<230)) data=2;
+        else if ((250<data)&&(data<320)) data=3;
+        else if ((340<data)&&(data<410)) data=4;
+        else if ((430<data)&&(data<500)) data=5;
+        else if ((520<data)&&(data<590)) data=6;
+        else if ((610<data)&&(data<680)) data=7;
+        else if ((700<data)&&(data<770)) data=8;
+        else if ((790<data)&&(data<860)) data=9;
+        else if ((870<data)&&(data<950)) data=10;
+        else if ((970<data)&&(data<1005)) data=11;
+        if(data==index)
+            return true;
+        else 
+            return false;
+      //  return temp;
     }
     /**
      * 获取当前按键值
      * @param index
     */
-    //% blockId=HuLuMaoexpanding_Key_Key_get block="获取当前按键值"
+    //% blockId=HuLuMaoexpanding_Key_Key_get block="获取当前按键值,有按键按下将会获取到当前按键数字，没有则获取到-1"
     //% weight=98
     //% blockGap=10
     //% color="#ff0000"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Key_get(): number {
-        let num;
-        // basic.pause(10);
-        // num=pins.i2cReadNumber(67, NumberFormat.UInt8LE);
-        // num=num-1;
-         return num;
+        let data;
+        // let temp: boolean = false;
+         data=basic.showNumber(pins.analogReadPin(AnalogPin.P0));
+         if(data>1010) data=-1;
+         else if (data<10) data=0;
+         else if ((30<data)&&(data<120)) data=1;
+         else if ((140<data)&&(data<230)) data=2;
+         else if ((250<data)&&(data<320)) data=3;
+         else if ((340<data)&&(data<410)) data=4;
+         else if ((430<data)&&(data<500)) data=5;
+         else if ((520<data)&&(data<590)) data=6;
+         else if ((610<data)&&(data<680)) data=7;
+         else if ((700<data)&&(data<770)) data=8;
+         else if ((790<data)&&(data<860)) data=9;
+         else if ((870<data)&&(data<950)) data=10;
+         else if ((970<data)&&(data<1005)) data=11;
+         return data;
+       //  return temp;
     }
 }
 //% color="#ff0000" weight=46 icon="\uf1b0" block="呼噜猫扩展板逻辑类"
