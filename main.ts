@@ -51,7 +51,7 @@ namespace HuLuMaoexpanding {
     export function Key(index:key_number): boolean {
         let data;
        // let temp: boolean = false;
-        data=basic.showNumber(pins.analogReadPin(AnalogPin.P0));
+       data = pins.analogReadPin(AnalogPin.P0);
         if(data>1010) data=-1;
         else if (data<10) data=0;
         else if ((30<data)&&(data<120)) data=1;
@@ -83,7 +83,7 @@ namespace HuLuMaoexpanding {
     export function Key_get(): number {
         let data;
         // let temp: boolean = false;
-         data=basic.showNumber(pins.analogReadPin(AnalogPin.P0));
+        data = pins.analogReadPin(AnalogPin.P0);
          if(data>1010) data=-1;
          else if (data<10) data=0;
          else if ((30<data)&&(data<120)) data=1;
