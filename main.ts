@@ -27,6 +27,18 @@ namespace HuLuMaoexpanding {
         //% blockId="_F2" block="F2"
         _F2,
     }
+    export enum YuHuo{
+        //% blockId="yu" block="与"
+        yu = 1,
+        //% blockId="huo" block="或"
+        huo,
+    }
+    export enum move{
+        //% blockId="zuo" block="左移"
+        zuo = 1,
+        //% blockId="you" block="右移"
+        you,
+    }
     // /**
     //  * 
     //  * @param index
@@ -100,28 +112,13 @@ namespace HuLuMaoexpanding {
          return data;
        //  return temp;
     }
-}
-//% color="#ff0000" weight=46 icon="\uf1b0" block="呼噜猫扩展板逻辑类"
-namespace HuLuMaoexpanding_logic {
 
-    export enum YuHuo{
-        //% blockId="yu" block="与"
-        yu = 1,
-        //% blockId="huo" block="或"
-        huo,
-    }
-    export enum move{
-        //% blockId="zuo" block="左移"
-        zuo = 1,
-        //% blockId="you" block="右移"
-        you,
-    }
-    /**
+        /**
      * 
      * @param index
     */
-    //% blockId=HuLuMaoexpanding_logic_logic1 block="将|%index和|%index1进行按位|%index2"
-    //% weight=100
+    //% blockId=HuLuMaoexpanding_Key_logic1 block="将|%index和|%index1进行按位|%index2"
+    //% weight=97
     //% blockGap=10
     //% index.min=0 index.max=255
     //% index1.min=0 index1.max=255
@@ -136,12 +133,12 @@ namespace HuLuMaoexpanding_logic {
         return length;
     }
 
-    /**
+        /**
      * 
      * @param index
     */
-    //% blockId=HuLuMaoexpanding_logic_logic2 block="将|%index进行按位取反"
-    //% weight=99
+    //% blockId=HuLuMaoexpanding_Key_logic2 block="将|%index进行按位取反"
+    //% weight=96
     //% blockGap=10
     //% index.min=0 index.max=255
     //% color="#ff0000"
@@ -152,12 +149,12 @@ namespace HuLuMaoexpanding_logic {
         return length;
     }
 
-    /**
+        /**
      * 
      * @param index
     */
-    //% blockId=HuLuMaoexpanding_logic_logic3 block="将|%index进行|%index1 |%index2"
-    //% weight=98
+    //% blockId=HuLuMaoexpanding_Key_logic3 block="将|%index进行|%index1 |%index2"
+    //% weight=95
     //% blockGap=10
     //% index.min=0 index.max=255
     //% index2.min=0 index2.max=255
@@ -171,15 +168,12 @@ namespace HuLuMaoexpanding_logic {
         }
         return length;
     }
-}
 
-//% color="#ff0000" weight=45 icon="\uf1b0" block="呼噜猫扩展板数学类"
-namespace HuLuMaoexpanding_math {
-   /**
+    /**
      * 
      * @param index
     */
-    //% blockId=HuLuMaoexpanding_math_math1 block="运算|%index的|%index1次方"
+    //% blockId=HuLuMaoexpanding_Key_math1 block="运算|%index的|%index1次方"
     //% weight=98
     //% blockGap=10
     //% color="#ff0000"
@@ -188,5 +182,6 @@ namespace HuLuMaoexpanding_math {
         let length;
         length=Math.pow(index,index1);
         return length;
-    } 
+    }
 }
+
