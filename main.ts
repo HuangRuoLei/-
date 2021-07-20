@@ -65,19 +65,23 @@ namespace HuLuMaoexpanding {
        // let temp: boolean = false;
        data = pins.analogReadPin(AnalogPin.P0);
        if(data>1010) data=-1;
-       else if (data<10) data=0;
-       else if ((10<=data)&&(data<100)) data=1;
-       else if ((100<=data)&&(data<190)) data=2;
-       else if ((190<=data)&&(data<280)) data=3;
-       else if ((280<=data)&&(data<370)) data=4;
-       else if ((370<=data)&&(data<460)) data=5;
-       else if ((460<=data)&&(data<550)) data=6;
-       else if ((550<=data)&&(data<640)) data=7;
-       else if ((640<=data)&&(data<730)) data=8;
-       else if ((730<=data)&&(data<820)) data=9;
-       else if ((820<=data)&&(data<910)) data=10;
-       else if ((910<=data)&&(data<1005)) data=11;
-       else data=-1;
+       else
+       {
+            basic.pause(50);
+            data = pins.analogReadPin(AnalogPin.P0);
+            if (data<10) data=0;
+            else if ((10<=data)&&(data<100)) data=1;
+            else if ((100<=data)&&(data<190)) data=2;
+            else if ((190<=data)&&(data<280)) data=3;
+            else if ((280<=data)&&(data<370)) data=4;
+            else if ((370<=data)&&(data<460)) data=5;
+            else if ((460<=data)&&(data<550)) data=6;
+            else if ((550<=data)&&(data<640)) data=7;
+            else if ((640<=data)&&(data<730)) data=8;
+            else if ((730<=data)&&(data<820)) data=9;
+            else if ((820<=data)&&(data<910)) data=10;
+            else if ((910<=data)&&(data<1005)) data=11;
+       }
         if(data==index)
             return true;
         else 
@@ -97,20 +101,27 @@ namespace HuLuMaoexpanding {
         let data;
         // let temp: boolean = false;
         data = pins.analogReadPin(AnalogPin.P0);
+
          if(data>1010) data=-1;
-         else if (data<10) data=0;
-         else if ((10<=data)&&(data<100)) data=1;
-         else if ((100<=data)&&(data<190)) data=2;
-         else if ((190<=data)&&(data<280)) data=3;
-         else if ((280<=data)&&(data<370)) data=4;
-         else if ((370<=data)&&(data<460)) data=5;
-         else if ((460<=data)&&(data<550)) data=6;
-         else if ((550<=data)&&(data<640)) data=7;
-         else if ((640<=data)&&(data<730)) data=8;
-         else if ((730<=data)&&(data<820)) data=9;
-         else if ((820<=data)&&(data<910)) data=10;
-         else if ((910<=data)&&(data<1005)) data=11;
-         else data=-1;
+         else
+         {
+            basic.pause(50);
+            data = pins.analogReadPin(AnalogPin.P0);
+            if (data<10) data=0;
+            else if ((10<=data)&&(data<100)) data=1;
+            else if ((100<=data)&&(data<190)) data=2;
+            else if ((190<=data)&&(data<280)) data=3;
+            else if ((280<=data)&&(data<370)) data=4;
+            else if ((370<=data)&&(data<460)) data=5;
+            else if ((460<=data)&&(data<550)) data=6;
+            else if ((550<=data)&&(data<640)) data=7;
+            else if ((640<=data)&&(data<730)) data=8;
+            else if ((730<=data)&&(data<820)) data=9;
+            else if ((820<=data)&&(data<910)) data=10;
+            else if ((910<=data)&&(data<1005)) data=11;
+            else data=-1;
+         }
+         
          return data;
        //  return temp;
     }
